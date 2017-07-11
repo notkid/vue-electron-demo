@@ -26,15 +26,20 @@
         </div>
       </div>
     </main>
+    <notification></notification>
   </div>
 </template>
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation';
+  import Notification from './Notification/main.vue';
 
   export default {
     name: 'landing-page',
-    components: { SystemInformation },
+    components: {
+      SystemInformation,
+      Notification,
+    },
     methods: {
       open(link) {
         this.$electron.shell.openExternal(link);
