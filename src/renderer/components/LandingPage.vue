@@ -26,19 +26,22 @@
         </div>
       </div>
     </main>
-    <notification></notification>
+    <!-- <notification></notification> -->
+    <galaxy />
   </div>
 </template>
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation';
-  import Notification from './Notification/main.vue';
+  // import Notification from './Notification/main.vue';
+  import Galaxy from './Galaxy/main.vue';
 
   export default {
     name: 'landing-page',
     components: {
       SystemInformation,
-      Notification,
+      // Notification,
+      Galaxy,
     },
     methods: {
       open(link) {

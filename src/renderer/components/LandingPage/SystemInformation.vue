@@ -26,6 +26,7 @@
         <div class="name">Platform:</div>
         <div class="value">{{ platform }}</div>
       </div>
+      <canvas id="c" width="300" height="300"></canvas>
     </div>
   </div>
 </template>
