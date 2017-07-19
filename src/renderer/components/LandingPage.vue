@@ -26,22 +26,25 @@
         </div>
       </div>
     </main>
+    <spark-circle />
     <!-- <notification></notification> -->
-    <galaxy />
+    <!-- <galaxy /> -->
   </div>
 </template>
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation';
+  import SparkCircle from './SparkCircle/main.vue';
   // import Notification from './Notification/main.vue';
-  import Galaxy from './Galaxy/main.vue';
+  // import Galaxy from './Galaxy/main.vue';
 
   export default {
     name: 'landing-page',
     components: {
       SystemInformation,
       // Notification,
-      Galaxy,
+      // Galaxy,
+      SparkCircle,
     },
     methods: {
       open(link) {
