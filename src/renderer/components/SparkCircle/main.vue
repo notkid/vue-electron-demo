@@ -50,7 +50,8 @@ export default {
       this.loop();
     },
     loop() {
-      requestAnimationFrame(this.loop);
+      // requestAnimationFrame(this.loop);
+      setTimeout(this.loop, 100);
       this.step();
       this.draw();
       this.tick ++;
@@ -64,4 +65,13 @@ export default {
 </script>
 
 <style lang="css">
+canvas {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateZ(0);
+}
 </style>

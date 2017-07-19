@@ -12,10 +12,10 @@ export default class particle{
   }
 
   draw(i, env) {
-    env.ctx.fillStyle = env.ctx.fillStyle = `hsla(${env.tick + this.life * 120}, 100%, 60%, ${this.life})`;
+    env.ctx.fillStyle = env.ctx.strokeStyle = `hsla(${env.tick + this.life * 120}, 100%, 60%, ${this.life})`;
     env.ctx.beginPath();
     if(env.particles[i - 1]) {
-      env.ctx.moveTo(this.x, this.y0);
+      env.ctx.moveTo(this.x, this.y);
       env.ctx.lineTo(env.particles[i - 1].x, env.particles[i - 1].y);
     }
     env.ctx.stroke();
@@ -31,7 +31,7 @@ export default class particle{
     this.speed += this.accel;
     this.x += Math.cos(this.angle) * this.speed;
     this.y += Math.sin(this.angle) * this.speed;
-    this.angle += Math.PI / 64;
+    this.angle += Math.PI / 87;
     this.accel *= 1.01;
     this.life -= this.decay;
     if (this.life <= 0) {

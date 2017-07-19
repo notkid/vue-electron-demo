@@ -5,14 +5,15 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'landing-page',
+    //   component: require('@/components/LandingPage'),
+    // },
     {
       path: '/',
-      name: 'landing-page',
-      component: require('@/components/LandingPage'),
-    },
-    {
-      path: '*',
-      redirect: '/',
+      name: 'canvas',
+      component: require('@/components/SparkCircle/main.vue')
     },
   ],
 });
