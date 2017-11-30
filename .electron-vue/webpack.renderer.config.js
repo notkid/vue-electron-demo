@@ -10,7 +10,6 @@ const BabiliWebpackPlugin = require('babili-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
 /**
  * List of node_modules to include in webpack bundle
  *
@@ -23,24 +22,13 @@ let whiteListedModules = ['vue']
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    renderer: path.join(__dirname, '../src/renderer/main.js')
+    renderer: path.join(__dirname, '../src/renderer/main.ts')
   },
   externals: [
     ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
   ],
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        use: {
-          loader: 'eslint-loader',
-          options: {
-            formatter: require('eslint-friendly-formatter')
-          }
-        }
-      },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -63,16 +51,28 @@ let rendererConfig = {
       },
       {
         test: /\.vue$/,
+        exclude: /node_modules/,
         use: {
           loader: 'vue-loader',
           options: {
             extractCSS: process.env.NODE_ENV === 'production',
             loaders: {
               sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
-              scss: 'vue-style-loader!css-loader!sass-loader'
+              scss: 'vue-style-loader!css-loader!sass-loader',
+              ts: 'awesome-typescript-loader',
+              tsx: 'babel-loader!awesome-typescript-loader'
             }
           }
         }
+      },
+      { test: /\.ts$/, 
+        loader: 'awesome-typescript-loader',
+        exclude: /node_modules/
+      },
+      { test: /\.tsx$/, 
+        loader: 'awesome-typescript-loader', 
+        exclude: /node_modules/,
+        options: { appendTsxSuffixTo: [/\.vue$/] } 
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -127,7 +127,7 @@ let rendererConfig = {
       '@': path.join(__dirname, '../src/renderer'),
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['.js', '.vue', '.json', '.css', '.node']
+    extensions: ['.js', '.node', '.ts', '.tsx']
   },
   target: 'electron-renderer'
 }
