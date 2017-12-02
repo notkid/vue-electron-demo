@@ -1,20 +1,24 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
-    "noImplicitAny": true,
-    "noImplicitThis": true,
+    "module": "es2015",
+    "target": "es5",
+    // "noImplicitAny": true,
+    // "noImplicitThis": true,
+    "jsx": "react",
+    "jsxFactory": "h",
     "moduleResolution": "node",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false,
     "experimentalDecorators": true
   },
+  "typesRoot": ["./node_modules/@types", "./types"],
   "include": [
     "types/globals.d.ts",
     "types/axios.d.ts",
     "types/vue.d.ts",
     "types/vuex.d.ts",
-    "types/vue-property-decorator.d.ts"
-    // "src/main.ts"
+    "types/vue-property-decorator.d.ts",
+    "src/renderer/main.ts"
   ]
 } 

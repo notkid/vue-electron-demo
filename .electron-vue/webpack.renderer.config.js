@@ -59,20 +59,20 @@ let rendererConfig = {
             loaders: {
               sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
               scss: 'vue-style-loader!css-loader!sass-loader',
-              ts: 'awesome-typescript-loader',
-              tsx: 'babel-loader!awesome-typescript-loader'
+              ts: 'ts-loader',
+              tsx: 'babel-loader!ts-loader'
             }
           }
         }
       },
       { test: /\.ts$/, 
-        loader: 'awesome-typescript-loader',
+        loader: 'ts-loader',
         exclude: /node_modules/
       },
       { test: /\.tsx$/, 
-        loader: 'awesome-typescript-loader', 
-        exclude: /node_modules/,
-        options: { appendTsxSuffixTo: [/\.vue$/] } 
+        loader: 'ts-loader', 
+        exclude: /node_modules/
+        // options: { appendTsxSuffixTo: [/\.vue$/] } 
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -124,10 +124,10 @@ let rendererConfig = {
   },
   resolve: {
     alias: {
-      '@': path.join(__dirname, '../src/renderer'),
+      '@': path.join(__dirname, '../src'),
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['.js', '.node', '.ts', '.tsx']
+    extensions: ['.js', '.node', '.ts', '.tsx', '.vue']
   },
   target: 'electron-renderer'
 }
