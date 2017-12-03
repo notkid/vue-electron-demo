@@ -20,14 +20,14 @@ import { Vue, Component, Prop } from "vue-property-decorator"
   //  }
    @Prop() header: string
 
-    render (h, context) {
+    render (h) {
       console.log(this.header)
       let cardHeader = () => {
         // if (this.$slots.header) {
           return (
             <div
               class="card__header">
-                {this.header}
+                {this.$slots.header}
             </div>
           )
         // }

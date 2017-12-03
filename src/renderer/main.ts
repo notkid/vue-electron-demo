@@ -3,22 +3,22 @@ import Vue from 'vue'
 // import axios from 'axios';
 
 import App from './App.vue';
-import Landing from '@/components/LandingPage.vue'
-console.log(Landing)
-import Router from 'vue-router';
+// import Landing from '@/components/LandingPage.vue'
+// console.log(Landing)
+// import Router from 'vue-router';
 
-Vue.use(Router);
-let routeOptions = <Router.RouterOptions>{
-  routes: [
-    {
-      path: '/',
-      name: 'landing-page',
-      component: Landing
-    }
-  ]
-} 
+// Vue.use(Router);
+// let routeOptions = <Router.RouterOptions>{
+//   routes: [
+//     {
+//       path: '/',
+//       name: 'landing-page',
+//       component: Landing
+//     }
+//   ]
+// } 
 
-let router: Router = new Router(routeOptions);
+// let router: Router = new Router(routeOptions);
 // import store from './store/index';
 
 // if (!process.env.IS_WEB) Vue.use(require('vue-electron'));
@@ -28,6 +28,6 @@ let router: Router = new Router(routeOptions);
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
-  router,
+  // router,
   render: h=> h(App)
 })

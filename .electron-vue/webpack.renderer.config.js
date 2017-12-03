@@ -70,9 +70,15 @@ let rendererConfig = {
         exclude: /node_modules/
       },
       { test: /\.tsx$/, 
-        loader: 'ts-loader', 
+        use: {
+          loader: 'awesome-typescript-loader',
+          options: {
+            useBabel: true
+          }
+        },
+        // loader: 'ts-loader',
         exclude: /node_modules/
-        // options: { appendTsxSuffixTo: [/\.vue$/] } 
+        // options: { appendTsxSuffixTo: [/\.vue$/] }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
