@@ -1,6 +1,8 @@
 <template>
   <div id="wrapper">
-    <card header="12">
+    <card
+      :bodyStyle="{padding: 0}"
+      header="12">
       <div slot="header">header</div>
       <div>body</div>
     </card>
