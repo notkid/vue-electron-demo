@@ -1,25 +1,43 @@
+// {
+//   "compilerOptions": {
+//     "module": "es2015",
+//     "target": "es5",
+//     "jsx": "preserve",
+//     "moduleResolution": "node",
+//     "sourceMap": true,
+//     "allowSyntheticDefaultImports": true,
+//     "strictFunctionTypes": false,
+//     "experimentalDecorators": true
+//   },
+//   "typesRoot": ["./node_modules/@types", "./types"],
+//   "include": [
+//     "types/globals.d.ts",
+//     "types/axios.d.ts",
+//     "types/vue.d.ts",
+//     "types/vuex.d.ts",
+//     "types/vue-property-decorator.d.ts",
+//     "src/renderer/main.ts"
+//   ]
+// } 
 {
   "compilerOptions": {
-    "module": "es2015",
-    "target": "es5",
-    // "noImplicitAny": true,
-    // "noImplicitThis": true,
-    // "jsx": "react",
-    // "jsxFactory": "h",
-    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "es5",
+      "es2015",
+      "es2015.promise"
+    ],
+    "module": "esnext",
     "moduleResolution": "node",
+    "target": "es5",
+    "jsx": "preserve",
     "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
     "strictFunctionTypes": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true
   },
-  "typesRoot": ["./node_modules/@types", "./types"],
   "include": [
-    "types/globals.d.ts",
-    "types/axios.d.ts",
-    "types/vue.d.ts",
-    "types/vuex.d.ts",
-    "types/vue-property-decorator.d.ts",
-    "src/renderer/main.ts"
+    "./src/**/*"
   ]
-} 
+}
